@@ -1,0 +1,1 @@
+{"neighbors": {"Management1": [{"device": "leaf4.arista.test", "port": "Management1"}]}, "model": "vEOS", "serialnumber": "ABC12345678", "systemmac": "112233445566", "version": "4.17.3F"}
