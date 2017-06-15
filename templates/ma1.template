@@ -1,0 +1,9 @@
+vrf definition management
+   rd 100:100
+!
+interface Management1
+  vrf management 
+  ip address $MGT_IPADDRESS
+  no shutdown
+!
+ip route vrf management 0.0.0.0/0 $DEFAULT_GW

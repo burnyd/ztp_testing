@@ -1,0 +1,11 @@
+hostname {{ hostname }}
+!
+username arista secret arista
+!
+aaa authorization exec default local
+!
+router bgp {{ as_num }}
+!
+{% for syslog in syslogs %}
+logging host {{ syslog.host }}
+{% endfor %}

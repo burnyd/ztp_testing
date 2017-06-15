@@ -1,0 +1,12 @@
+hostname testspine
+!
+username arista secret arista
+!
+aaa authorization exec default local
+!
+router bgp 6500
+!
+logging host 1.1.1.1
+logging host 2.2.2.2
+logging host 3.3.3.3
+logging host 4.4.4.4

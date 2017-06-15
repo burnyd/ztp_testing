@@ -1,0 +1,21 @@
+---
+    
+  - name: Build Configuration Files
+    hosts: all
+    connection: local
+    gather_facts: no
+  
+    vars:
+      serial_number: ABC12345678
+      hostname: testspine   
+      as_num: 6500   
+
+    tasks:
+      - name: Create a directory for configs
+        file: path=/usr/share/ztpserver/nodes/{{ serial_number }}/ state=directory
+      - name: Create configs
+        template: src=templates/baseconfig.j2 dest=/usr/share/ztpserver/nodes/{{ serial_number }}/startup-config
+      - name: Create the pattern file for the inventory node
+        copy: src=/usr/share/ztpserver/pattern dest=//usr/share/ztpserver/nodes/{{ serial_number }}/pattern 
+      - name: Create the Definition file for the inventory node
+        copy: src=/usr/share/ztpserver/definition dest=//usr/share/ztpserver/nodes/{{ serial_number }}/definition

@@ -1,0 +1,18 @@
+eos_connection:
+  host: "{{ inventory_hostname }}"
+  username: arista
+  password: arista
+  transport: cli
+  use_ssl: true
+
+vlans:
+    - vlanid: 7
+      name: production
+    - vlanid: 8
+      name: app
+
+syslogs:
+    - host: 1.1.1.1
+    - host: 2.2.2.2
+    - host: 3.3.3.3
+    - host: 4.4.4.4 

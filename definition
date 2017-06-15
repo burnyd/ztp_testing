@@ -1,0 +1,11 @@
+---
+name: Static node definition
+actions:
+  -
+    action: copy_file
+    always_execute: true
+    attributes:
+      dst: /mnt/flash
+      mode: 777
+      overwrite: if-missing
+      src_url: /usr/share/ztpserver/files/ma1.sh      
